@@ -31,10 +31,20 @@ public class repositorioBebidasLista implements repositorioBebidas {
 
 	}
 
-	public void alterar(String tipo, String sabor, char tamanho, double custo, double preco) {
-		// TODO Auto-generated method stub
-
+	//public void alterar(String tipo, String sabor, char tamanho, double custo, double preco) {
+		// == 
+	public void alterarTipo(String tipo) {
+		if(!this.valor.getTipo().equals(tipo)) {
+			this.valor.setTipo(tipo);					
+		}
 	}
+	
+	public void alterarSabor(String sabor) {
+		if (!this.valor.getSabor().equals(sabor)) {
+			this.valor.setSabor(sabor);
+		}
+	}
+	
 
 	public boolean procurar(String tipo, String sabor) {
 		// TODO Auto-generated method stub
@@ -44,6 +54,18 @@ public class repositorioBebidasLista implements repositorioBebidas {
 	public void promocao(String tipo, double preco) {
 		// TODO Auto-generated method stub
 
+	}
+
+	
+	public void remover(Bebidas valor) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	public void alterar(Bebidas valor) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

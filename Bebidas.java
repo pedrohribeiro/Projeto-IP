@@ -1,23 +1,22 @@
 package bebidas;
 
 public class Bebidas {
-	
-        private String tipo;
-        private String sabor;
-        private char tamanho;
-        private double custo;
-        private double preco;
-        
-        
-        public Bebidas (String tipo, String sabor, char tamanho, double custo, double preco) {
-        	this.tipo = tipo;
-        	this.sabor = sabor;
-        	this.tamanho = tamanho;
-        	this.custo = custo;
-        	this.preco = preco;
-        	
-        }
-        
+	  private String tipo;
+      private String sabor;
+      private char tamanho;
+      private double custo;
+      private double preco;
+      
+      
+      public Bebidas (String tipo, String sabor, char tamanho, double custo, double preco) {
+      	this.tipo = tipo;
+      	this.sabor = sabor;
+      	this.tamanho = tamanho;
+      	this.custo = custo;
+      	this.preco = preco;
+      	
+      }
+      
 		public String getTipo() {
 			return this.tipo;
 		}
@@ -48,11 +47,12 @@ public class Bebidas {
 		public void setPreco(double preco) {
 			this.preco = preco;
 		}
-       
+     
 		public double getLucro() {
 			return (getPreco() - getCusto());
 		}
-        
-       
+      
+     
 }
+
 
