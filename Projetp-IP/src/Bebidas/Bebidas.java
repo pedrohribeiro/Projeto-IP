@@ -1,7 +1,8 @@
-package bebidas;
+package Bebidas;
 
 public class Bebidas {
-	  private String tipo;
+	
+	private String tipo;
       private String sabor;
       private char tamanho;
       private double custo;
@@ -26,7 +27,7 @@ public class Bebidas {
 		public String getSabor() {
 			return this.sabor;
 		}
-		public void setSabor(String sabor) {
+		public void setSabor(Bebidas valor) {
 			this.sabor = sabor;
 		}
 		public char getTamanho() {
