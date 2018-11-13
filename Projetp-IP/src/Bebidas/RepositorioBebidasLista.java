@@ -3,29 +3,29 @@ package Bebidas;
 public class RepositorioBebidasLista implements RepositorioBebidas {
 
 
-	private Bebidas valor;
+	private Bebidas bebida;
 	private RepositorioBebidasLista proximo;
 
 	public RepositorioBebidasLista() {
-		this.valor = null;
+		this.bebida = null;
 		this.proximo = null;
 	}
 
-	public void inserir(Bebidas valor) {
+	public void inserir(Bebidas bebida) {
 		if (this.proximo != null) {
-			if (this.valor == null) {
-				this.valor = valor;
+			if (this.bebida == null) {
+				this.bebida = bebida;
 				this.proximo = new RepositorioBebidasLista();
 			} else {
-				this.proximo.inserir(valor);
+				this.proximo.inserir(bebida);
 			}
 		}
 	}
 
 	public void remover(String sabor) {
 		if (this.proximo != null) {
-			if(this.valor.getSabor().equals(sabor)) {
-				this.valor= this.proximo.valor;
+			if(this.bebida.getSabor().equals(sabor)) {
+				this.bebida= this.proximo.bebida;
 				this.proximo = this.proximo.proximo;
 			} else {
 				this.proximo.remover(sabor);
@@ -35,8 +35,8 @@ public class RepositorioBebidasLista implements RepositorioBebidas {
 
 	public Bebidas procurar(String sabor) {		
 		if (this.proximo != null) {
-			if (this.valor.getSabor().equals(sabor)) {
-				return valor;
+			if (this.bebida.getSabor().equals(sabor)) {
+				return bebida;
 			} else {
 				return this.proximo.procurar(sabor);
 			}
@@ -45,12 +45,12 @@ public class RepositorioBebidasLista implements RepositorioBebidas {
 	}
 	
 
-	public void atualizar(Bebidas valor) {
+	public void atualizar(Bebidas bebida) {
 		if (this.proximo != null) {
-		if (!this.valor.getSabor().equals(valor.getSabor())) {
-			this.valor.setSabor(valor);
+		if (!this.bebida.getSabor().equals(bebida.getSabor())) {
+			this.bebida.setSabor(bebida);
 		} else 
-			this.proximo.atualizar(valor);
+			this.proximo.atualizar(bebida);
 		}
 	}
 
