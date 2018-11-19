@@ -2,7 +2,6 @@ package Bebidas;
 
 public class RepositorioBebidasLista implements RepositorioBebidas {
 
-
 	private Bebidas bebida;
 	private RepositorioBebidasLista proximo;
 
@@ -24,8 +23,8 @@ public class RepositorioBebidasLista implements RepositorioBebidas {
 
 	public void remover(String sabor) {
 		if (this.proximo != null) {
-			if(this.bebida.getSabor().equals(sabor)) {
-				this.bebida= this.proximo.bebida;
+			if (this.bebida.getSabor().equals(sabor)) {
+				this.bebida = this.proximo.bebida;
 				this.proximo = this.proximo.proximo;
 			} else {
 				this.proximo.remover(sabor);
@@ -33,7 +32,7 @@ public class RepositorioBebidasLista implements RepositorioBebidas {
 		}
 	}
 
-	public Bebidas procurar(String sabor) {		
+	public Bebidas procurar(String sabor) {
 		if (this.proximo != null) {
 			if (this.bebida.getSabor().equals(sabor)) {
 				return bebida;
@@ -41,19 +40,16 @@ public class RepositorioBebidasLista implements RepositorioBebidas {
 				return this.proximo.procurar(sabor);
 			}
 		} else
-			return null;		
+			return null;
 	}
-	
 
 	public void atualizar(Bebidas bebida) {
 		if (this.proximo != null) {
-		if (!this.bebida.getSabor().equals(bebida.getSabor())) {
-			this.bebida.setSabor(bebida);
-		} else 
-			this.proximo.atualizar(bebida);
+			if (this.bebida.getSabor().equals(bebida.getSabor()) && this.bebida.getTamanho() == bebida.getTamanho()) {
+				this.bebida.setPreco(bebida.getPreco());
+			} else
+				this.proximo.atualizar(bebida);
 		}
 	}
-
-	
 
 }
