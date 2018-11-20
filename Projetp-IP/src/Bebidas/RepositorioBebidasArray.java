@@ -1,8 +1,11 @@
 package Bebidas;
 
-public class RepositorioBebidasArray {
+import Excecoes.*;
 
-	Bebidas [] arrayBebidas;
+public class RepositorioBebidasArray implements RepositorioBebidas {
+
+	Bebidas[] arrayBebidas;
+
 	public RepositorioBebidasArray() {
 		this.arrayBebidas = new Bebidas[200];
 	}
@@ -43,11 +46,11 @@ public class RepositorioBebidasArray {
 
 	}
 
-	public Bebidas procurar(String sabor) {
+	public Bebidas procurar(Bebidas bebida) {
 
 		for (int i = 0; i < arrayBebidas.length; i++) {
 
-			if (this.arrayBebidas[i].getSabor().equals(sabor)) {
+			if (this.arrayBebidas[i].getSabor().equals(bebida)) {
 				return this.arrayBebidas[i];
 			} else {
 				return null;
@@ -56,18 +59,30 @@ public class RepositorioBebidasArray {
 		return null;
 	}
 
-	public void atualizarPreco(String tipo, char tamanho, double preco) {
+	public boolean existe(Bebidas bebida) {
+
+		for (int i = 0; i < arrayBebidas.length; i++) {
+
+			if (this.arrayBebidas[i].getSabor().equals(bebida)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public void atualizar(Bebidas bebida) {
 
 		boolean parada = false;
 		for (int i = 0; i < arrayBebidas.length && !parada; i++) {
 			if (this.arrayBebidas[i] != null) {
-				if (this.arrayBebidas[i].getSabor().equals(tipo)
-						&& this.arrayBebidas[i].getTamanho() == tamanho) {
-					this.arrayBebidas[i].setPreco(preco);
+				if (this.arrayBebidas[i].getSabor().equals(bebida.getSabor())
+						&& this.arrayBebidas[i].getTamanho() == bebida.getTamanho()) {
+					this.arrayBebidas[i].setPreco(bebida.getPreco());
 					parada = true;
-					
+
 				}
 			}
 		}
 	}
+
 }

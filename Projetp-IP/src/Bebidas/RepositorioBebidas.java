@@ -1,14 +1,16 @@
 package Bebidas;
-
+import Excecoes.*;
 public interface RepositorioBebidas {
 	
-	public void inserir (Bebidas valor);
+	public void inserir (Bebidas valor) throws BebidaExistenteException; 
 	
-	public void remover (String sabor);
+	public void remover (Bebidas bebida) throws BebidaInexistenteException;
 	
-	public Bebidas procurar (String sabor);
+	public Bebidas procurar (Bebidas bebida) throws BebidaInexistenteException;
 	
-	public void atualizar (Bebidas valor);
+	public boolean existe (Bebidas bebida);
+	
+	public void atualizar (Bebidas bebida) throws BebidaInexistenteException;
 		
 	
 }
