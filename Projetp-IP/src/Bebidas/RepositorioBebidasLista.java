@@ -13,13 +13,12 @@ public class RepositorioBebidasLista implements RepositorioBebidas {
 	}
 
 	public void inserir(Bebidas bebida) {
-		if (this.proximo != null) {
-			if (this.bebida == null) {
-				this.bebida = bebida;
-				this.proximo = new RepositorioBebidasLista();
-			} else {
-				this.proximo.inserir(bebida);
-			}
+
+		if (this.bebida == null) {
+			this.bebida = bebida;
+			this.proximo = new RepositorioBebidasLista();
+		} else {
+			this.proximo.inserir(bebida);
 		}
 	}
 
@@ -36,7 +35,7 @@ public class RepositorioBebidasLista implements RepositorioBebidas {
 
 	public Bebidas procurar(Bebidas bebida) {
 		if (this.proximo != null) {
-			if (this.bebida.getSabor().equals(bebida)) {
+			if (this.bebida.getSabor().equals(bebida.getSabor())) {
 				return bebida;
 			} else {
 				return this.proximo.procurar(bebida);
@@ -46,16 +45,18 @@ public class RepositorioBebidasLista implements RepositorioBebidas {
 	}
 
 	public boolean existe(Bebidas bebida) {
-		if (this.proximo != null) {
-			if (this.bebida.getSabor().equals(bebida)) {
-				return true;
-			} else {
-				return this.proximo.existe(bebida);
-			}
-		} else
+		if (this.bebida == null) {
 			return false;
-		
+		} else if (this.bebida.getSabor().equals(bebida.getSabor())) {
+			return true;
+		} else if (this.proximo != null) {
+			return this.proximo.existe(bebida);
+		} else {
+			return false;
+		}
+
 	}
+
 	public void atualizar(Bebidas bebida) {
 		if (this.proximo != null) {
 			if (this.bebida.getSabor().equals(bebida.getSabor()) && this.bebida.getTamanho() == bebida.getTamanho()) {
@@ -64,7 +65,5 @@ public class RepositorioBebidasLista implements RepositorioBebidas {
 				this.proximo.atualizar(bebida);
 		}
 	}
-	
-
 
 }

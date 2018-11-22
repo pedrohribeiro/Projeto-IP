@@ -8,7 +8,7 @@ public class Bebidas {
       private double preco;
       
       
-      public Bebidas (String tipo, String sabor, char tamanho, double custo, double preco) {
+      public Bebidas (String tipo, String sabor, char tamanho, double preco) {
       	this.tipo = tipo;
       	this.sabor = sabor;
       	this.tamanho = tamanho;

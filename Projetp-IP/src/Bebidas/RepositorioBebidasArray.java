@@ -50,7 +50,7 @@ public class RepositorioBebidasArray implements RepositorioBebidas {
 
 		for (int i = 0; i < arrayBebidas.length; i++) {
 
-			if (this.arrayBebidas[i].getSabor().equals(bebida)) {
+			if (this.arrayBebidas[i].getSabor().equals(bebida.getSabor())) {
 				return this.arrayBebidas[i];
 			} else {
 				return null;
@@ -63,8 +63,10 @@ public class RepositorioBebidasArray implements RepositorioBebidas {
 
 		for (int i = 0; i < arrayBebidas.length; i++) {
 
-			if (this.arrayBebidas[i].getSabor().equals(bebida)) {
-				return true;
+			if (this.arrayBebidas[i] != null) {
+				if (this.arrayBebidas[i].getSabor().equals(bebida.getSabor())) {
+					return true;
+				}
 			}
 		}
 		return false;

@@ -2,18 +2,26 @@ package Bebidas;
 
 import java.util.*;
 
+import Excecoes.BebidaExistenteException;
+import Excecoes.BebidaInexistenteException;
+
 public class mainTeste {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws BebidaExistenteException, BebidaInexistenteException {
 		NegocioBebidas negA = new NegocioBebidas(1); 
 		NegocioBebidas negL = new NegocioBebidas(0);
-		Scanner in = new Scanner(System.in);
 		
-		boolean acabou = false;
-		while (!acabou) {
-			String auxTipo, auxSabor;
-			char auxTam;
-			int auxPreco;
+		
+		Bebidas teste = new Bebidas("Tequila", "12 anos", 'G', 10 );
+		Bebidas teste1 = new Bebidas("Tequila", "12 anos", 'G', -1);
+		
+		negL.inserir(teste);
+		negL.atualizar(teste1);
+		Bebidas b = negL.procurar(teste);
+		System.out.println(b.getPreco());
+		
+		
+
 			
 //			System.out.println("Digite o Tipo:");
 //			auxTipo = in.next();
@@ -33,4 +41,4 @@ public class mainTeste {
 	
 	}
 
-}
+
