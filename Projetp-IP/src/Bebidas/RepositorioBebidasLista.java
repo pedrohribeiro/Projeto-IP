@@ -1,7 +1,4 @@
 package Bebidas;
-
-import Excecoes.*;
-
 public class RepositorioBebidasLista implements RepositorioBebidas {
 
 	private Bebidas bebida;

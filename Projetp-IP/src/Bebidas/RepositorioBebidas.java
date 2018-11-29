@@ -1,5 +1,4 @@
 package Bebidas;
-import Excecoes.*;
 public interface RepositorioBebidas {
 	
 	public void inserir (Bebidas valor) throws BebidaExistenteException; 

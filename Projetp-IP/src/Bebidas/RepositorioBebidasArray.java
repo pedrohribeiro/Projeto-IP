@@ -1,7 +1,4 @@
 package Bebidas;
-
-import Excecoes.*;
-
 public class RepositorioBebidasArray implements RepositorioBebidas {
 
 	Bebidas[] arrayBebidas;

@@ -1,5 +1,4 @@
 package Bebidas;
-
 public class Bebidas {
 	
 	  private String tipo;

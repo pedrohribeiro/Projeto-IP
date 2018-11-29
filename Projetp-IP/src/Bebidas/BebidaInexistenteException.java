@@ -1,4 +1,4 @@
-package Excecoes;
+package Bebidas;
 
 public class BebidaInexistenteException extends Exception{
 	
